@@ -1,0 +1,31 @@
+import java.lang.Math;
+import java.util.*;
+import java.lang.*;
+class Main
+{
+    public static void main(String gg[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a number : ");
+        int n=sc.nextInt();
+        int ans=0;
+        int x=0;
+        while(n!=0)
+        {
+            int digit=n%10;
+            if(digit==1)
+            {
+                ans=(int)Math.pow(2,x)+ans;
+            }
+            if(!(digit==1 || digit==0))
+            {
+                System.out.println("Invalid format");
+                ans=-1;
+                break;
+            }
+             x++;
+             n=n/10;
+        }
+        System.out.println("Decimal for binary number is "+ans);
+    }
+}

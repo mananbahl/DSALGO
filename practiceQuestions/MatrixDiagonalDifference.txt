@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int r;
+    cin>>r;
+    int matrix[r][r];
+    for(int i=0;i<r;i++)
+    {
+        for(int n=0;n<r;n++)
+        {
+            cin>>matrix[i][n];
+        }
+    }
+    int c=r-1;
+    int sum1=0;
+    int sum2=0;
+    for(int i=0;i<r;i++)
+    {
+        sum1+=matrix[i][i];
+        sum2+=matrix[i][c];    
+        c--;
+    }
+    
+    cout<<max(sum1,sum2)-min(sum1,sum2)<<endl;
+    return 0;
+}
